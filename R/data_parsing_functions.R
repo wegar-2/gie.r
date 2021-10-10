@@ -1,4 +1,6 @@
 
+
+
 dtParseGasData <- function(dtData) {
   # 1. drop info column
   dtData$info <- NULL

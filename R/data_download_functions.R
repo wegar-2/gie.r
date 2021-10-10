@@ -54,7 +54,7 @@ dtFetchData <- function(cCountryCode, cCompanyEic = NULL, cFacilityEic = NULL,
   }
 
   # 3. add clause limiting the time span ---------------------------------------
-  if (!is.null(dateStartDate) | is.null(dateEndDate)) {
+  if (!is.null(dateStartDate) | !is.null(dateEndDate)) {
     # 3.1. dateStartDate only
     if (!is.null(dateStartDate) & is.null(dateEndDate)) {
       cUrlTimeSpanClause <- paste0("?from=", format(x = dateStartDate, format = "%Y-%m-%d"))

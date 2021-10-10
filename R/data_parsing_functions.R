@@ -19,6 +19,11 @@ dtParseGasData <- function(dtData) {
   # 3. cast gas_day_started_on as Date class
   dtData$gas_day_started_on <- as.Date(dtData$gas_day_started_on, format = "%Y-%m-%d")
   # 4. cast data_status column to full names
+  lDictDataStatus <- list(
+    "E" = "estimated",
+    "C" = "confirmed",
+    "N" = "no_data"
+  )
   dtData$data_status <- sapply(X = dtData$data_status, FUN = function(x, lDictDataStatus) {
     lDictDataStatus[[x]]
   }, lDictDataStatus = lDictDataStatus) %>% unname()
@@ -46,6 +51,11 @@ dtParseLngData <- function(dtData) {
   # 3. cast gas_day_started_on as Date class
   dtData$gas_day_started_on <- as.Date(dtData$gas_day_started_on, format = "%Y-%m-%d")
   # 4. cast data_status column to full names
+  lDictDataStatus <- list(
+    "E" = "estimated",
+    "C" = "confirmed",
+    "N" = "no_data"
+  )
   dtData$data_status <- sapply(X = dtData$data_status, FUN = function(x, lDictDataStatus) {
     lDictDataStatus[[x]]
   }, lDictDataStatus = lDictDataStatus) %>% unname()
